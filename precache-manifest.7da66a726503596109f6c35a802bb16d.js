@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06ffcac8d57db4da6a17a81ff8da4357",
+    "revision": "2742b6e3daec70389863c3affb758a7a",
     "url": "/my_sotial_network/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/my_sotial_network/static/css/4.7cc9c24b.chunk.css"
   },
   {
-    "revision": "ead8250cb0ae033696b0",
+    "revision": "c83c295938ea487f1a26",
     "url": "/my_sotial_network/static/css/main.fe662676.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/my_sotial_network/static/js/4.2dc46a3d.chunk.js"
   },
   {
-    "revision": "ead8250cb0ae033696b0",
-    "url": "/my_sotial_network/static/js/main.827ea3ca.chunk.js"
+    "revision": "c83c295938ea487f1a26",
+    "url": "/my_sotial_network/static/js/main.87dc2432.chunk.js"
   },
   {
     "revision": "38ce9c0f410e317fddfb",
