@@ -1,0 +1,56 @@
+
+/*.nav{*/
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
+/*    cursor: pointer;*/
+/*}*/
+/*.nav span {*/
+/*    padding: 0px 5px;*/
+/*}*/
+/*.nav span:hover{*/
+/*    color: #041226;*/
+/*    font-weight: 500;*/
+/*    border-bottom: 1px solid black;*/
+/*}*/
+/*.nav span.page{*/
+/*    font-weight: 700;*/
+/*    color: red;*/
+/*}*/
+/*.btn{*/
+/*    width: 25px;*/
+/*    height: 12px;*/
+/*}*/
+
+.nav{
+    padding: 15px 0px 5px 0px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+}
+.nav .btn,
+.nav span {
+    padding: 5px 10px;
+    background: white;
+    border-radius: 2px;
+    margin: 2px;
+    font-size: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: #673ab7;
+}
+.nav span:hover{
+    color: #23527c;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+/*.nav span .active{*/
+/*    color: #23527c;*/
+/*}*/
+.page{
+    color: #656565;
+}
+.btn svg{
+    padding-top: 5px;
+}
+.btn:hover{
+    color: #656565;
+}

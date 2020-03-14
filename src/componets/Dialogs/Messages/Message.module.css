@@ -1,0 +1,27 @@
+.message{
+    width: 100%;
+}
+.message .he,
+.message .me{
+    border: 1px solid #d7dbe1;
+    padding: 10px 20px;
+    display: block;
+    max-width: 300px;
+    background-color: white;
+}
+.message .me{
+    border-radius: 0px 10px 10px 10px;
+}
+.message .he{
+    border-radius: 10px 0px 10px 10px;
+    margin-left: auto;
+}
+.textarea{
+    width: 100%;
+    border-radius:3px;
+    resize: none;
+    height: 50px;
+}
+.form{
+    margin-top: 40px;
+}

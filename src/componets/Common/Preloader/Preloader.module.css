@@ -1,0 +1,13 @@
+.inPreloader{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10%;
+    padding-bottom: 50%;
+
+}
+.preloader{
+    background-color: #f0f2f7;
+    min-height: 100vh;
+    height: 100%;
+
+}

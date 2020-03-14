@@ -1,0 +1,38 @@
+
+.dialog.active {
+    font-weight: 600;
+    background-color: #f9fafb;
+    border: 1px solid #d7dbe1;
+    border-right: none;
+    z-index: 100;
+    position: relative;
+}
+
+.dialog.active:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: -1px;
+    background-color: #f9fafb;
+
+}
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dialog a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 0px 5px 5px;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+}

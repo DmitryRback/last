@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    grid-area: h;
+    background: linear-gradient(to right, #ff29d7, #079daa);
+    display: flex;
+    justify-content: space-between;
+    min-height: 80px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.37);
+    border-color: transparent;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.24);
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+}
+
+.logo img {
+    width: 120px;
+    display: block;
+}
+
+.menu {
+    position: absolute;
+    left: 270px;
+    top: 26px;
+    cursor: pointer;
+}

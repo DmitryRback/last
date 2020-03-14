@@ -1,0 +1,46 @@
+.formControl.error textarea,
+.formControl.error input {
+    border: 2px solid #be4b49;
+}
+.formControl .textarea,
+.formControl .classInput{
+    position: relative;
+}
+.formControl.error .message {
+    color: #be4b49;
+}
+.textarea .message {
+    position: absolute;
+    top: 5px;
+    right: 1%;
+}
+.classInput .message{
+    position: absolute;
+    top: 6px;
+    right: 4%;
+}
+.errorMessage {
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px  rgba(139, 3, 0, .75), 0 1px 10px  rgba(0, 0, 0, .35);
+    color: #fff;
+    text-align: center;
+    padding: 8px 13px;
+    margin-bottom: 15px;
+    position: absolute;
+    top: -60px;
+    right: 0px;
+}
+.inErrorMessage {
+    position: relative;
+}
+.inErrorMessage p{
+    margin: 0px;
+    font-size: 18px;
+}
+.inErrorMessage img{
+    display: block;
+    position: absolute;
+    top: 31px;
+}

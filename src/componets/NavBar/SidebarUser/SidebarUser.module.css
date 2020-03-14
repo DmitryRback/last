@@ -1,0 +1,21 @@
+.barUser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-color: #f5f5f5;
+    transition: 1s ease-in-out;
+
+}
+
+.barUser img {
+    width: 58px;
+    height: 58px;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.barUser:last-child {
+    color: #444;
+    text-transform: uppercase;
+}

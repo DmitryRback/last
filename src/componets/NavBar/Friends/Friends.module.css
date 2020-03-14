@@ -1,0 +1,23 @@
+.friends p {
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 20px;
+    font-weight: 600;
+    color: #444;
+}
+.friends{
+    position: relative;
+}
+.friends:before {
+    content: '';
+    width: 250px;
+    height: 1px;
+    background: #efefef;
+    position: absolute;
+}
+.users{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    text-align: center;
+}

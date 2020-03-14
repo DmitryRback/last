@@ -1,0 +1,47 @@
+.item {
+    background-color: #fff;
+    color: #656565;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+}
+
+.item_content {
+    padding: 20px;
+}
+
+.item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.item:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.name_ava {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+
+}
+
+.name_ava p {
+    margin: 0px;
+    padding-left: 10px;
+
+}
+
+.message {
+}
+
+.likes {
+
+
+}
+
+.likes p {
+    text-align: right;
+    margin: 10px 0px 0px 0px;
+}
