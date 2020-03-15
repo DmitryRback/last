@@ -3,14 +3,20 @@ import pr from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import avatar from './../../../assets/img/user.jpg'
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
-import cover from './../../../assets/img/background.jpg'
-import {LoginBtn} from "../../Header/LoginBtn/LoginBtn";
+import cover from './../../../assets/img/background.jpg';
 import {NavLink} from "react-router-dom";
+import {mdiDownload} from '@mdi/js';
+import Icon from "@mdi/react";
 
 const ProfileInfo = (props) => {
-
     if (!props.profile) {
         return <Preloader/>
+    }
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            props.savePhoto(e.target.files[0])
+        }
+
     }
     return (
         <div>
@@ -26,6 +32,17 @@ const ProfileInfo = (props) => {
                             ? <div className={pr.free}><p>Free</p>p></div>
                             : <div className={pr.busy}><p>Busy</p></div>}
                     </div>
+                    {props.isOwner &&
+                        <div className={pr.downloadImg}>
+                            <div className={pr.visability}>
+                                <label >
+                                    <input type={"file"} onChange={onMainPhotoSelected} className={pr.inputFile}/>
+                                    <Icon path={mdiDownload} color={'white'} size={'32px'}/>
+                                </label>
+                            </div>
+
+                        </div>}
+
                     {/*<div className={pr.joob_description}>*/}
                     {/*    Job description:<br/>*/}
                     {/*    {` ${props.profile.lookingForAJobDescription}`}*/}
@@ -35,7 +52,7 @@ const ProfileInfo = (props) => {
                 <div className={pr.description}>
                     <h2>{props.profile.fullName}</h2>
                     {!props.isAuth && <div>
-                        <NavLink to={'/login'}  className={pr.login_btn}>
+                        <NavLink to={'/login'} className={pr.login_btn}>
                             <p>Login</p>
                         </NavLink>
                     </div>}

@@ -1,13 +1,12 @@
-import React, {Component, Suspense} from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import pr from './componets/Common/Preloader/Preloader.module.css'
 import ProfileComponent from './componets/Profile/ProfileComponent';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {HashRouter, Route, withRouter} from "react-router-dom";
 import Settings from "./componets/Settings/Settings";
 import News from "./componets/News/News";
 import Music from "./componets/Music/Music";
 import NavBarContainer from "./componets/NavBar/NavBarContainer";
-
 import HeaderContainer from "./componets/Header/HeaderContainer";
 import Login from "./componets/Login/Login";
 import {connect, Provider} from "react-redux";
@@ -64,11 +63,11 @@ export const ContainerApp = compose(
 
 const SocialNetworkApp = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Provider store={store}>
                 <ContainerApp/>
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 
 }

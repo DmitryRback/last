@@ -3,12 +3,18 @@ import {ProfileAPI, UsersAPI} from "../API/API";
 const ADD_POST = 'PROFILE/ADD-POST';
 const SET_USERS_PROFILE = 'PROFILE/SET_USERS_PROFILE';
 const SET_PROFILE_USERS_DATA = 'PROFILE/SET_PROFILE_USERS_DATA';
-const SET_STATUS = 'PROFILE/SET_STATUS'
-const DELETE_POST = 'PROFILE/DELETE_POST'
+const SET_STATUS = 'PROFILE/SET_STATUS';
+const DELETE_POST = 'PROFILE/DELETE_POST';
+const SAVE_PHOTO_SUCCES = 'PROFILE/SAVE_PHOTO_SUCCES';
+
 
 let initialState = {
     posts: [
-        {message: 'Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?', id: 1, likesCount: 15},
+        {
+            message: 'Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?Hello how are youre?',
+            id: 1,
+            likesCount: 15
+        },
         {message: 'It\'s my first post', id: 2, likesCount: 20},
         {message: 'Hello ', id: 3, likesCount: 15},
         {message: 'post', id: 4, likesCount: 0},
@@ -43,6 +49,12 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 posts: state.posts.filter(p => p.id !== action.id)
             }
+        case SAVE_PHOTO_SUCCES:
+            debugger
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos}
+            }
         default:
             return state;
     }
@@ -62,6 +74,9 @@ export const setStatus = (status) => ({
 export const deletePost = (id) => ({
     type: DELETE_POST, id
 })
+export const savePhotoSucces = (photos) => ({
+    type: SAVE_PHOTO_SUCCES, photos
+})
 
 export const getProfile = (userId) => async (dispatch) => {
     let responce = await UsersAPI.getProfile(userId)
@@ -77,6 +92,13 @@ export const updateStatus = (status) => async (dispatch) => {
     let responce = await ProfileAPI.updateStatus(status)
     if (responce.data.resultCode === 0) {
         dispatch(setStatus(status))
+    }
+}
+export const savePhoto = (photo) => async (dispatch) => {
+    debugger
+    let responce = await ProfileAPI.savePhoto(photo)
+    if (responce.data.resultCode === 0) {
+        dispatch(savePhotoSucces(responce.data.data.photos))
     }
 }
 

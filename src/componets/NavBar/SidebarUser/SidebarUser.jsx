@@ -6,7 +6,7 @@ import u from './SidebarUser.module.css'
 const BarUser = (props) => {
     return (
         <div className={u.barUser}>
-            <NavLink to={'/profile/' + props.id}>
+            <NavLink to={'/profile'}>
                 <img onClick={() => props.goToProfile(props.id)} src={!props.fullProfile ? avatar
                     : (!props.fullProfile.photos.small ? avatar : props.fullProfile.photos.small)}/>
             </NavLink>
