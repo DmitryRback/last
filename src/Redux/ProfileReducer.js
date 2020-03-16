@@ -117,7 +117,7 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
     let responce = await ProfileAPI.saveProfile(profile)
     if (responce.data.resultCode === 0) {
         dispatch(getProfile(userId))
-        dispatch(updateProfileStatus(true))
+        // dispatch(updateProfileStatus(true))
     } else {
         let message = responce.data.messages.length > 0 ? responce.data.messages[0] : 'common error'
         const socialNetwork = message.slice(
@@ -125,7 +125,8 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
             responce.data.messages[0].indexOf(")")
         ).toLowerCase();
         dispatch(stopSubmit('editProfile', {contacts: {[socialNetwork]: message}}))
-        dispatch(updateProfileStatus(false))
+        return Promise.reject(responce.data.messages[0]);
+        // dispatch(updateProfileStatus(false))
     }
 }
 export default profileReducer;

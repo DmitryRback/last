@@ -12,11 +12,6 @@ import {ProfileData} from "./profileData/profileData";
 
 const ProfileInfo = (props) => {
     const [editMode, setEditMode] = useState(false);
-    if (props.updateProfile === true) {
-        setEditMode(false)
-    }
-    props.updateProfileStatus(false)
-
 
     if (!props.profile) {
         return <Preloader/>
@@ -27,7 +22,9 @@ const ProfileInfo = (props) => {
         }
     }
     const onSubmit = (formData) => {
-        props.saveProfile(formData)
+        props.saveProfile(formData).then(() => {
+            setEditMode(false)
+        })
     }
 
     return (
@@ -71,12 +68,12 @@ const ProfileInfo = (props) => {
                 {editMode
                     ? <ProfileDataForm initialValues={props.profile} onSubmit={onSubmit}
                                        exitForEditMode={() => setEditMode(false)}
-                                       profile={props.profile}/>
+                    profile={props.profile}/>
                     : <ProfileData goToEditMode={() => setEditMode(true)} profile={props.profile}/>}
             </div>
 
         </div>
-    );
+    )
 }
 
 
