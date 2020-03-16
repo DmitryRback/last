@@ -1,7 +1,7 @@
 import React from "react";
 import l from './Login.module.css'
 import Button from './../Button/Button1'
-import {Field, reduxForm} from "redux-form";
+import {reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {LoginThunk} from "../../Redux/AuthReducer";
 import {createField, Input} from "../Common/FormControls/FormControls";

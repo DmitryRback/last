@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import {connect} from "react-redux";
-import { LogoutThunk, setAuthUserData, setFullProfile} from "../../Redux/AuthReducer";
+import { LogoutThunk, setAuthUserData} from "../../Redux/AuthReducer";
 import {withRouter} from "react-router-dom";
 import {getProfile} from "../../Redux/ProfileReducer";
 import {compose} from "redux";
@@ -28,10 +28,10 @@ const mapStateToProps = (state) => {
         login: state.auth.login,
         id: state.auth.userId,
         email: state.auth.email,
-        fullProfile: state.auth.fullProfile,
+        profile: state.profilePage.profile,
     }
 }
 export default compose(
-    connect(mapStateToProps, {setAuthUserData, setFullProfile, getProfile, LogoutThunk, changeVisibleNavBar}),
+    connect(mapStateToProps, {setAuthUserData, getProfile, LogoutThunk, changeVisibleNavBar}),
     withRouter
 )(HeaderContainer)

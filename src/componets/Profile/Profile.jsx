@@ -5,7 +5,8 @@ import PostsComponent from "./MyPosts/MyPostsContainer";
 const Profile = (props) => {
     return (
         <div >
-            <ProfileInfo savePhoto={props.savePhoto} isAuth={props.isAuth}  {...props} />
+            <ProfileInfo saveProfile={props.saveProfile} savePhoto={props.savePhoto} isAuth={props.isAuth}  {...props}
+                         updateProfileStatus={props.updateProfileStatus}/>
             <PostsComponent  />
         </div>
     );

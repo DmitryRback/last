@@ -17,7 +17,7 @@ const NavBar = (props) => {
             <nav className={nb.nav_nav}>
                 <div>
                     {props.isAuth && <BarUser id={props.id} goToProfile={props.goToProfile}
-                                              fullProfile={props.fullProfile} login={props.login}/>}
+                                              profile={props.profile} login={props.login}/>}
                 </div>
                 <div className={nb.nav_btn}>
                     <div className={nb.item + ' ' + nb.first}>

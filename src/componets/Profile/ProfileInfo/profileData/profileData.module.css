@@ -1,0 +1,13 @@
+.fullDescription{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+.jobDescription {
+    padding-left: 50px;
+}
+.contacts{
+    padding-right: 50px;
+
+}

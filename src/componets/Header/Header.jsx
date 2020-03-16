@@ -17,7 +17,7 @@ const Header = (props) => {
             <div className={hd.menu}>
                 <Icon path={mdiBackburger} size={'28px'} color={"white"}  onClick={props.changeVisibleNavBar}/>
             </div>
-            <LoginBlock isAuth={props.isAuth} id={props.id} LogoutThunk={props.LogoutThunk} fullProfile={props.fullProfile}/>
+            <LoginBlock isAuth={props.isAuth} id={props.id} LogoutThunk={props.LogoutThunk} profile={props.profile}/>
             {/*<div className={hd.login_block}>*/}
             {/*    {props.isAuth ? <div className={hd.login}>*/}
             {/*            <button className={hd.exit} onClick={props.LogoutThunk}>Exit</button>*/}

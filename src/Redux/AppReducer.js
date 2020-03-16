@@ -29,6 +29,7 @@ export const initializeApp = () => async (dispatch) => {
    let promise =  dispatch(getAuth())
     await Promise.all([promise])
          dispatch(initializedSuccess())
+
 }
 
 export default appReducer;

@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
     return {
         friends: state.siteBar.friends,
         id: state.auth.userId,
-        fullProfile: state.auth.fullProfile,
+        profile: state.profilePage.profile,
         login: state.auth.login,
         isAuth: state.auth.isAuth,
         navBar: state.siteBar.navBar

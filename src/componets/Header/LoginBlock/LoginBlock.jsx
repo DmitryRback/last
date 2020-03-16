@@ -12,8 +12,8 @@ export const LoginBlock = (props) => {
             {props.isAuth ? <div className={hd.login}>
                     <button className={hd.exit} onClick={props.LogoutThunk}>Exit</button>
                     <NavLink to={'/profile'}>
-                        <img src={!props.fullProfile ? avatar
-                            : (!props.fullProfile.photos.small ? avatar : props.fullProfile.photos.small)}/>
+                        <img src={!props.profile ? avatar
+                            : (!props.profile.photos.small ? avatar : props.profile.photos.small)}/>
                     </NavLink>
                 </div>
                 : <LoginBtn person={person}/>
