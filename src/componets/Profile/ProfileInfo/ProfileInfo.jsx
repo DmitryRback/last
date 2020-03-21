@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import pr from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import avatar from './../../../assets/img/user.jpg'
@@ -9,9 +9,18 @@ import {mdiDownload} from '@mdi/js';
 import Icon from "@mdi/react";
 import ProfileDataForm from "./profileDataForm/profileDataForm";
 import {ProfileData} from "./profileData/profileData";
+import Button from "../../Button/Button1";
 
 const ProfileInfo = (props) => {
+
     const [editMode, setEditMode] = useState(false);
+
+    useEffect(() => {
+            setEditMode(false)
+            props.updateProfileStatus(false)
+        },
+        [props.updateProfile]
+    )
 
     if (!props.profile) {
         return <Preloader/>
@@ -22,9 +31,7 @@ const ProfileInfo = (props) => {
         }
     }
     const onSubmit = (formData) => {
-        props.saveProfile(formData).then(() => {
-            setEditMode(false)
-        })
+        props.saveProfile(formData)
     }
 
     return (
@@ -35,23 +42,21 @@ const ProfileInfo = (props) => {
             </div>
             <div className={pr.container}>
                 <div className={pr.profileDescription}>
-                    <div className={pr.avatar}>
-                        <img src={!props.profile.photos.large ? avatar : props.profile.photos.large}/>
-                        <div>
-                            {props.profile.lookingForAJob
-                                ? <div className={pr.free}><p>Free</p>p></div>
-                                : <div className={pr.busy}><p>Busy</p></div>}
-                        </div>
-                        {props.isOwner &&
-                        <div className={pr.downloadImg}>
-                            <div className={pr.visability}>
-                                <label>
-                                    <input type={"file"} onChange={onMainPhotoSelected} className={pr.inputFile}/>
-                                    <Icon path={mdiDownload} color={'white'} size={'32px'}/>
-                                </label>
-                            </div>
+                    <div className={pr.avatarBlock}>
+                        {!editMode && <Button text={'Edit profile'} onClick={() => setEditMode(true)}/>}
+                        <div className={pr.avatar}>
+                            <img src={!props.profile.photos.large ? avatar : props.profile.photos.large}/>
+                            {props.isOwner &&
+                            <div className={pr.downloadImg}>
+                                <div className={pr.visability}>
+                                    <label>
+                                        <input type={"file"} onChange={onMainPhotoSelected} className={pr.inputFile}/>
+                                        <Icon path={mdiDownload} color={'white'} size={'32px'}/>
+                                    </label>
+                                </div>
 
-                        </div>}
+                            </div>}
+                        </div>
                     </div>
                     <div className={pr.description}>
                         <h2>{props.profile.fullName}</h2>
@@ -64,12 +69,13 @@ const ProfileInfo = (props) => {
                             <ProfileStatusWithHooks updateStatus={props.updateStatus} status={props.status}/>
                         </div>
                     </div>
+
                 </div>
                 {editMode
                     ? <ProfileDataForm initialValues={props.profile} onSubmit={onSubmit}
                                        exitForEditMode={() => setEditMode(false)}
-                    profile={props.profile}/>
-                    : <ProfileData goToEditMode={() => setEditMode(true)} profile={props.profile}/>}
+                                       profile={props.profile}/>
+                    : <ProfileData profile={props.profile}/>}
             </div>
 
         </div>

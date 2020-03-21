@@ -1,13 +1,43 @@
 .fullDescription{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
+    width: 95%;
+    margin: 0 auto ;
+    padding: 40px 0px;
+    color: #444;
 }
+.contacts,
 .jobDescription {
-    padding-left: 50px;
+    width: 48%;
+    margin-right: 1%;
+    margin-left: 1%;
 }
-.contacts{
-    padding-right: 50px;
-
+.contacts h3{
+    text-align: center;
+    margin: 0;
+}
+.block{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.itemDescription{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.itemJobDescription{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.itemJobDescription svg{
+    margin-left: 10px;
+}
+.item{
+    display: block;
+}
+.item svg:hover{
+    /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
+    width: 28px !important;
+    height: 28px !important;
 }

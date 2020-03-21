@@ -3,6 +3,7 @@ import Icon from "@mdi/react";
 import { mdiArrowLeft } from '@mdi/js';
 import pg from './Paginator.module.css'
 import { mdiArrowRight } from '@mdi/js';
+import cn from 'classnames'
 
 let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChange, portionSize = 10}) => {
 
@@ -28,7 +29,7 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChange, portionS
                 {pages
                 .filter(p => p >= leftPortionsPagesNumber && p <= rightPortionsPagesNumber)
                 .map(p => {
-                return <span key={p} className={currentPage === p && pg.page}
+                return <span key={p} className={cn({[pg.page]: currentPage === p})}
                              onClick={() => onPageChange(p)}>{p}</span>
             })}
         {portionCount > portionNumber &&

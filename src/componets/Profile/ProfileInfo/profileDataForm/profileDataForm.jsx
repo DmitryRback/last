@@ -1,50 +1,52 @@
 import React from "react";
 import Button from "../../../Button/Button1";
-import pd from "../profileData/profileData.module.css";
-import {Contact} from "../profileData/profileData";
+import pdf from "./profileDataForm.module.css";
 import {Input, createField, Textarea} from "../../../Common/FormControls/FormControls";
 import {reduxForm} from "redux-form";
-import handleSubmit from "redux-form/lib/handleSubmit";
 import l from "../../../Login/Login.module.css";
 
 const ProfileDataForm = ({ handleSubmit, exitForEditMode, profile, error}) => {
     return (
         <form onSubmit={handleSubmit}>
-            <Button text={'Save profile'} />
-            <Button text={'Cancel'} onClick={exitForEditMode}/>
+            <div className={pdf.btn}>
+                <Button text={'Save profile'} />
+                <Button text={'Cancel'} onClick={exitForEditMode}/>
+            </div>
             {
                 error && <div className={l.fullError}>
                     {error}
                 </div>
             }
-            <div className={pd.fullDescription}>
-                <div className={pd.jobDescription}>
-                    <div>
-                        <b>Full name:</b>
+            <div className={pdf.fullDescription}>
+                <div className={pdf.jobDescription}>
+                    <div className={pdf.item}>
+                        <div className={pdf.description}> <b>Full name:</b> </div>
                         {createField('', Input,'fullName','Full name')}
                     </div>
-                    <div>
+                    <div className={pdf.itemJob}>
                         <b>Looking for a job:</b>
                         {createField('', Input, 'lookingForAJob', null, null,
                             {type: 'checkbox'})}
                     </div>
-                    <div>
-                        <b>My professionals skills:</b>
+                    <div className={pdf.item}>
+                        <div className={pdf.description}> <b>My professionals skills:</b> </div>
+
                         {createField('', Textarea, 'lookingForAJobDescription',
                             'My professionals skills')}
                     </div>
                     <div>
-                        <b>AboutMe:</b>
+                        <div className={pdf.description}> <b>AboutMe:</b> </div>
                         {createField('', Textarea, 'aboutMe',
                             'About me')}
                     </div>
 
                 </div>
 
-                <div className={pd.contacts}>
-                    <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
+                <div className={pdf.contactsEdit}>
+                    <h3>Contacts</h3> {Object.keys(profile.contacts).map(key => {
                     return <div key={key}>
-                        <b>{key}</b>:  {createField('', Input,'contacts.' + [key],[key])}
+                        <div className={pdf.description}><b>{key}</b>:</div>
+                        {createField('', Input,'contacts.' + [key],[key])}
                     </div>
                 })}
                 </div>

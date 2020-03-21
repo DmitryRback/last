@@ -3,10 +3,9 @@
     border: 1px solid #d7dbe1;
     display: block;
     padding: 20px 30px;
-    max-width: 400px;
+    width: 360px;
     border-radius: 5px;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 40px auto;
     color: #444;
     box-sizing: border-box;
 
@@ -17,6 +16,16 @@
     margin-top: 0px;
     padding: 0;
 }
+
+.boxInput input{
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: white;
+    height: 35px;
+    width: 100%;
+}
+
 
 .placeholder {
     margin-bottom: 20px;
@@ -39,4 +48,11 @@
     text-align: center;
     padding: 5px 0px;
     margin-bottom: 15px;
+}
+.captchaImg{
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 auto 20px auto;
+    display: block;
 }

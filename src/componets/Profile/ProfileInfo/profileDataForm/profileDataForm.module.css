@@ -1,0 +1,52 @@
+.fullDescription{
+    width: 95%;
+    margin: 0 auto ;
+    padding: 40px 0px;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+}
+.contactsEdit,
+.jobDescription {
+    width: 48%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+.fullDescription input,
+.fullDescription textarea {
+    width: 98%;
+    margin: 0 auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 5px;
+}
+.fullDescription textarea{
+    resize: none;
+    height: 80px;
+}
+.fullDescription input{
+    height: 35px;
+}
+.itemJob{
+    display: flex;
+    align-items: center;
+}
+.itemJob b{
+    padding-right: 10px;
+}
+.item b{
+    margin-bottom: 10px;
+}
+.contactsEdit h3{
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+.btn{
+    margin-left: 20px;
+}
+.btn :last-child{
+    margin-left: 10px;
+}
+.description{
+    margin: 10px 0px;
+}
